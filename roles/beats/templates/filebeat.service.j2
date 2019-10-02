@@ -1,0 +1,13 @@
+[Unit]
+Description=Filebeat
+Documentation=https://www.elastic.co/guide
+After=network.target
+
+[Service]
+Type=simple
+Restart=always
+WorkingDirectory={{ filebeat_home }}
+ExecStart={{ filebeat_home }}/filebeat -c {{ filebeat_home }}/filebeat/filebeat.yml
+
+[Install]
+WantedBy=multi-user.target

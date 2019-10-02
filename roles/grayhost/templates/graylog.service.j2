@@ -1,0 +1,14 @@
+[Unit]
+Description=Graylog
+Documentation=https://www.graylog.org
+After=network.target
+
+[Service]
+Type=simple
+Restart=always
+WorkingDirectory={{ graylog_home }}
+ExecStart={{ graylog_home }}/bin/graylogctl start
+ExecStop={{ graylog_home }}/bin/graylogctl stop
+
+[Install]
+WantedBy=multi-user.target

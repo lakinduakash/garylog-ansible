@@ -1,0 +1,24 @@
+---
+- name: Apply common configurations
+  hosts: all
+  roles:
+    - common
+
+- name: Apply filebeats configurations
+  hosts:
+#    - beats_1
+#    - beats_2
+  roles:
+    - beats
+
+- name: Apply graylog configurations
+  hosts:
+#   - graylog_1
+  roles:
+    - grayhost 
+
+- name: Configure Elasticserch
+  hosts:
+  #  - elastic_1
+  roles:
+    - elastic

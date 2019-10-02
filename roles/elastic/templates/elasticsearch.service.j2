@@ -1,0 +1,13 @@
+[Unit]
+Description=Elasticserach
+Documentation=https://www.elastic.co/guide
+After=network.target
+
+[Service]
+Type=simple
+Restart=always
+WorkingDirectory={{ elastic_home }}
+ExecStart={{ elastic_home }}/bin/elasticsearch
+
+[Install]
+WantedBy=multi-user.target

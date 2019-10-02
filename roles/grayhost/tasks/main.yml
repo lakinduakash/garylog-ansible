@@ -1,0 +1,46 @@
+- block:
+  - name: Install mongodb
+    apt:
+      deb: https://repo.mongodb.org/apt/ubuntu/dists/bionic/mongodb-org/4.2/multiverse/binary-amd64/mongodb-org-server_4.2.0_amd64.deb
+  
+  - name: Start mongod server
+    systemd:
+      name: mongod
+      state: started
+      daemon_reload: yes
+
+  - name: Download graylog package
+    get_url:
+      url: https://downloads.graylog.org/releases/graylog/graylog-3.1.2.tgz
+
+  - name: Extract Graylog
+    unarchive:
+      src: graylog-3.1.2.tgz
+      dest: {{ graylog_home }}
+      remote_src: yes
+
+  - name: Create graylog conf dir
+    shell:
+      cmd: "mkdir -p /etc/graylog/server"
+
+  - name: Add Graylog service file
+    template:
+      src: server.conf.j2
+      dest: /etc/graylog/server/server.conf
+  
+  - name: Add Graylog service file
+    template:
+      src: graylog.service.j2
+      dest: /etc/systemd/system/graylog.service
+
+  - name: Start Graylog
+    systemd:
+        name: graylog
+        state: started
+        daemon_reload: yes
+        
+  
+  
+  become: true
+  become_method: sudo
+  become_user: root

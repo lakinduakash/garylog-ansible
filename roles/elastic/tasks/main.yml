@@ -1,0 +1,27 @@
+- block:
+  - name: Download Elasticsearch
+    get_url:
+      url: https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.8.2.tar.gz
+
+  - name: Extract Elasticserach
+    unarchive:
+      src: elasticsearch-6.8.2.tar.gz
+      dest: {{ elastic_home }}
+      remote_src: yes
+  
+  - name: Add Elasticsearch service file
+    template:
+      src: elasticsearch.service.j2
+      dest: /etc/systemd/system/elasticsearch.service
+
+  - name: Start Elasticserach
+    systemd:
+        name: elasticsearch
+        state: started
+        daemon_reload: yes
+        
+  
+  
+  become: true
+  become_method: sudo
+  become_user: root

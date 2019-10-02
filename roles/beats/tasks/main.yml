@@ -1,0 +1,34 @@
+- block:
+  - name: Download Filebeat
+    get_url:
+      url: https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.3.2-linux-x86_64.tar.gz
+
+  - name: Extract Filebeat
+    unarchive:
+      src: filebeat-7.3.2-linux-x86_64.tar.gz
+      dest: "{{ filebeat_home }}"
+      remote_src: yes
+  
+  - name: Configure filebeat.yml
+    template:
+      src: filebeat.yml
+      dest: "{{ filebeat_home }}/filebeat.yml"
+      owner: root
+      mode: u=rw,g=r,o=r
+  
+  - name: Copy filebeat service file
+    template:
+      src: filebeat.service.j2
+      dest: /etc/systemd/system/filebeat.service
+  
+  - name: Start Filebeat service
+    systemd:
+        name: filebeat
+        state: started
+        daemon_reload: yes
+        
+  
+  
+  become: true
+  become_method: sudo
+  become_user: root

@@ -1,0 +1,10 @@
+# Replace [ip_address] and [ssh_user]
+
+[beats]
+beats_1 ansible_host=[ip_address] ansible_user=[ssh_user]
+
+[graylog]
+graylog_1 ansible_host=[ip_address] ansible_user=[ssh_user]
+
+[elastic]
+elastic_1 ansible_host=[ip_address] ansible_user=[ssh_user]

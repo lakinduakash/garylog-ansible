@@ -1,0 +1,4 @@
+log_path: carbob.log
+
+graylog_host: ip_1
+graylog_port: 5044
