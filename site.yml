@@ -1,8 +1,8 @@
 ---
-- name: Apply common configurations
-  hosts: all
-  roles:
-    - common
+# - name: Apply common configurations
+#   hosts: all
+#   roles:
+#     - common
 
 - name: Apply filebeats configurations
   hosts:
