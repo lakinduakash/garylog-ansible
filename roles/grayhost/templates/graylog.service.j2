@@ -4,11 +4,16 @@ Documentation=https://www.graylog.org
 After=network.target
 
 [Service]
-Type=simple
-Restart=always
 WorkingDirectory={{ graylog_home }}
 ExecStart={{ graylog_home }}/bin/graylogctl start
 ExecStop={{ graylog_home }}/bin/graylogctl stop
+User=ubuntu
+Group=ubuntu
+Type=forking
+Restart=on-failure
+RestartSec=5
+StartLimitInterval=60s
+StartLimitBurst=3
 
 [Install]
 WantedBy=multi-user.target

@@ -4,10 +4,15 @@ Documentation=https://www.elastic.co/guide
 After=network.target
 
 [Service]
-Type=simple
-Restart=always
 WorkingDirectory={{ elastic_home }}
 ExecStart={{ elastic_home }}/bin/elasticsearch
+User=ubuntu
+Group=ubuntu
+Type=simple
+Restart=on-failure
+RestartSec=5
+StartLimitInterval=60s
+StartLimitBurst=3
 
 [Install]
 WantedBy=multi-user.target
