@@ -4,9 +4,6 @@
       url: https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.3.2-linux-x86_64.tar.gz
       dest: /home/ubuntu/
 
-  - name: Create {{ filebeat_home }}
-
-
   - name: Extract Filebeat
     unarchive:
       src: /home/ubuntu/filebeat-7.3.2-linux-x86_64.tar.gz
