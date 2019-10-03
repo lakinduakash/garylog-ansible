@@ -17,7 +17,7 @@
   - name: Extract Graylog
     unarchive:
       src: /home/ubuntu/graylog-3.1.2.tgz
-      dest: "{{ graylog_home }}"
+      dest: /mnt/
       remote_src: yes
 
   - name: Create graylog conf dir

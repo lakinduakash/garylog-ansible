@@ -7,7 +7,7 @@
   - name: Extract Elasticserach
     unarchive:
       src: /home/ubuntu/elasticsearch-6.8.2.tar.gz
-      dest: "{{ elastic_home }}"
+      dest: /mnt/
       remote_src: yes
   
   - name: Add Elasticsearch service file
