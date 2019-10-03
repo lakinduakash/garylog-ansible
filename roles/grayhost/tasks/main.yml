@@ -12,11 +12,12 @@
   - name: Download graylog package
     get_url:
       url: https://downloads.graylog.org/releases/graylog/graylog-3.1.2.tgz
+      dest: /home/ubuntu/
 
   - name: Extract Graylog
     unarchive:
-      src: graylog-3.1.2.tgz
-      dest: {{ graylog_home }}
+      src: /home/ubuntu/graylog-3.1.2.tgz
+      dest: "{{ graylog_home }}"
       remote_src: yes
 
   - name: Create graylog conf dir

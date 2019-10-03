@@ -2,10 +2,11 @@
   - name: Download Filebeat
     get_url:
       url: https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.3.2-linux-x86_64.tar.gz
+      dest: /home/ubuntu/
 
   - name: Extract Filebeat
     unarchive:
-      src: filebeat-7.3.2-linux-x86_64.tar.gz
+      src: /home/ubuntu/filebeat-7.3.2-linux-x86_64.tar.gz
       dest: "{{ filebeat_home }}"
       remote_src: yes
   
