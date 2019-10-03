@@ -6,19 +6,19 @@
 
 - name: Configure Elasticserch
   hosts:
-  #  - elastic_1
+    - elastic_1
   roles:
     - elastic
 
 - name: Apply graylog configurations
   hosts:
-#   - graylog_1
+   - graylog_1
   roles:
     - grayhost 
 
 - name: Apply filebeats configurations
   hosts:
-#    - beats_1
+    - beats_1
 #    - beats_2
   roles:
     - beats

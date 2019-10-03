@@ -1,4 +1,4 @@
-log_path: carbob.log
+log_path: /home/ubuntu/test-log-writer/test.log
 
-graylog_host: ip_1
+graylog_host: 10.130.0.84
 graylog_port: 5044
