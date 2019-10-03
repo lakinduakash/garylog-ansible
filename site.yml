@@ -4,12 +4,11 @@
 #   roles:
 #     - common
 
-- name: Apply filebeats configurations
+- name: Configure Elasticserch
   hosts:
-#    - beats_1
-#    - beats_2
+  #  - elastic_1
   roles:
-    - beats
+    - elastic
 
 - name: Apply graylog configurations
   hosts:
@@ -17,8 +16,9 @@
   roles:
     - grayhost 
 
-- name: Configure Elasticserch
+- name: Apply filebeats configurations
   hosts:
-  #  - elastic_1
+#    - beats_1
+#    - beats_2
   roles:
-    - elastic
+    - beats
