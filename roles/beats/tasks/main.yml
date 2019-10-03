@@ -12,7 +12,7 @@
   
   - name: Configure filebeat.yml
     template:
-      src: filebeat.yml
+      src: filebeat.yml.j2
       dest: "{{ filebeat_home }}/filebeat.yml"
       owner: root
       mode: u=rw,g=r,o=r
