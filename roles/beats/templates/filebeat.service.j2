@@ -6,7 +6,7 @@ After=network.target
 [Service]
 Type=simple
 WorkingDirectory={{ filebeat_home }}
-ExecStart={{ filebeat_home }}/filebeat -c {{ filebeat_home }}/filebeat/filebeat.yml
+ExecStart={{ filebeat_home }}/filebeat -c {{ filebeat_home }}/filebeat.yml
 User=ubuntu
 Group=ubuntu
 Restart=on-failure

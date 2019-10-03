@@ -10,6 +10,7 @@
       dest: /mnt/
       remote_src: yes
       owner: ubuntu
+      group: ubuntu
   
   - name: Configure filebeat.yml
     template:

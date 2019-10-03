@@ -20,6 +20,7 @@
       dest: /mnt/
       remote_src: yes
       owner: ubuntu
+      group: ubuntu
 
   - name: Create graylog conf dir
     shell:
