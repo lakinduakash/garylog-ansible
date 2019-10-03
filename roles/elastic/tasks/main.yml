@@ -9,6 +9,7 @@
       src: /home/ubuntu/elasticsearch-6.8.2.tar.gz
       dest: /mnt/
       remote_src: yes
+      owner: ubuntu
   
   - name: Add Elasticsearch service file
     template:

@@ -9,6 +9,7 @@
       src: /home/ubuntu/filebeat-7.3.2-linux-x86_64.tar.gz
       dest: /mnt/
       remote_src: yes
+      owner: ubuntu
   
   - name: Configure filebeat.yml
     template:

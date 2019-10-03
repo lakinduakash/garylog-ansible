@@ -19,6 +19,7 @@
       src: /home/ubuntu/graylog-3.1.2.tgz
       dest: /mnt/
       remote_src: yes
+      owner: ubuntu
 
   - name: Create graylog conf dir
     shell:
