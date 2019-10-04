@@ -1,10 +1,11 @@
 - name: Create new user
   uri:
-    url: "{{api_url}}/users"
+    url: "{{ api_url }}/users"
     user: admin
     password: admin
     method: POST
     body: "{{ lookup('file','create_user.json') }}"
     force_basic_auth: yes
     status_code: [201,200]
+    headers: {X-Requested-By: "{{ api_url }}"}
     body_format: json
