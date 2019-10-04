@@ -1,1 +1,3 @@
-Automate filebeat,graylog and elasticsearch
+# Graylog Ansible with Filebeat
+
+Archtecture Overview
