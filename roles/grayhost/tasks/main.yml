@@ -53,3 +53,5 @@
   become: true
   become_method: sudo
   become_user: root
+
+- import_tasks: api.yml
