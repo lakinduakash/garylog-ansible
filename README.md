@@ -1,4 +1,7 @@
 # Graylog Ansible with Filebeat
 
-Archtecture Overview
+### Archtecture Overview
+
 ![architecture](docs/arc.jpg)
+
+
