@@ -2,15 +2,22 @@
   - name: Download Elasticsearch
     get_url:
       url: https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.8.2.tar.gz
-      dest: /home/ubuntu/
+      dest: /tmp/
 
   - name: Extract Elasticserach
     unarchive:
-      src: /home/ubuntu/elasticsearch-6.8.2.tar.gz
+      src: /tmp/elasticsearch-6.8.2.tar.gz
       dest: /mnt/
       remote_src: yes
-      owner: ubuntu
-      group: ubuntu
+
+  - name: Change ownership of elasticsearch folder
+    file:
+      path: "{{ elastic_home }}"
+      state: directory
+      recurse: yes
+      owner: "{{ elastic_user }}"
+      group: "{{ elastic_user }}"
+
   
   - name: Add Elasticsearch service file
     template:

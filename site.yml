@@ -14,7 +14,7 @@
   hosts:
    - graylog_1
   roles:
-    - grayhost 
+    - grayhost
 
 - name: Apply filebeats configurations
   hosts:

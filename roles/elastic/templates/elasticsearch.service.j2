@@ -6,8 +6,8 @@ After=network.target
 [Service]
 WorkingDirectory={{ elastic_home }}
 ExecStart={{ elastic_home }}/bin/elasticsearch
-User=ubuntu
-Group=ubuntu
+User={{ elastic_user }}
+Group={{ elastic_user }}
 Type=simple
 Restart=on-failure
 RestartSec=5

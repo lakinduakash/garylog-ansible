@@ -12,15 +12,21 @@
   - name: Download graylog package
     get_url:
       url: https://downloads.graylog.org/releases/graylog/graylog-3.1.2.tgz
-      dest: /home/ubuntu/
+      dest: /tmp/
 
   - name: Extract Graylog
     unarchive:
-      src: /home/ubuntu/graylog-3.1.2.tgz
+      src: /tmp/graylog-3.1.2.tgz
       dest: /mnt/
       remote_src: yes
-      owner: ubuntu
-      group: ubuntu
+
+  - name: Change ownership of graylog home
+    file:
+      path: "{{ graylog_home }}"
+      state: directory
+      recurse: yes
+      owner: "{{ graylog_user }}"
+      group: "{{ graylog_user }}"
 
   - name: Create graylog conf dir
     shell:

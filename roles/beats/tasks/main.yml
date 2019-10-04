@@ -2,15 +2,13 @@
   - name: Download Filebeat
     get_url:
       url: https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.3.2-linux-x86_64.tar.gz
-      dest: /home/ubuntu/
+      dest: /tmp/
 
   - name: Extract Filebeat
     unarchive:
-      src: /home/ubuntu/filebeat-7.3.2-linux-x86_64.tar.gz
+      src: /tmp/filebeat-7.3.2-linux-x86_64.tar.gz
       dest: /mnt/
       remote_src: yes
-      owner: ubuntu
-      group: ubuntu
   
   - name: Configure filebeat.yml
     template:
