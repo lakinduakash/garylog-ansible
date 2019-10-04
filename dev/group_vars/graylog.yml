@@ -2,7 +2,7 @@ graylog_home: /mnt/graylog-3.1.2
 graylog_user: ubuntu
 http_bind_address: "0.0.0.0:9000"
 http_publish_uri: "http://35.168.15.139:9000/"
-api_url: "http://35.168.15.139:9000/api"
+api_url: "http://localhost:9000/api"
 
 # You MUST specify a hash password for the root user (which you only need to initially set up the
 # system and in case you lose connectivity to your authentication backend)

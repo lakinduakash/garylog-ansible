@@ -22,3 +22,9 @@
 #    - beats_2
   roles:
     - beats
+
+- name: Call graylog api
+  hosts:
+    - graylog_1
+  roles:
+    - grayhost-api
