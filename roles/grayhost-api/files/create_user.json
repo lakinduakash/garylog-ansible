@@ -3,6 +3,6 @@
     "password":"lakindu2pass",
     "full_name":"Lakindu Akash",
     "email":"lakindu@wso2.com",
-    "permissions":"[]",
-    "roles":"[admin]"
+    "permissions":[],
+    "roles":["admin"]
 }
