@@ -29,8 +29,12 @@
       group: "{{ graylog_user }}"
 
   - name: Create graylog conf dir
-    shell:
-      cmd: "mkdir -p /etc/graylog/server"
+    file:
+      path: /etc/graylog/server
+      state: directory
+      recurse: yes
+      owner: root
+      group: root
 
   - name: Add Graylog service file
     template:
