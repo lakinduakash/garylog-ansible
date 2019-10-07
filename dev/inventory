@@ -1,15 +1,20 @@
 # Replace [ip_address] and [ssh_user]
 
+# Filebeat agents are installed and run in these nodes. Logs are collected from these nodes and send 
+# to graylog server. You can define any number of filebeat hosts. To configure log paths in each node 
+# change the log_paths variable in host_vars
 [beats]
 #beats_1 ansible_host=[ip_address] ansible_user=[ssh_user]
 #Example
 beats_1 ansible_host=localhost ansible_user=ubuntu
 
+# Where Graylog server is installed.
 [graylog]
 #graylog_1 ansible_host=[ip_address] ansible_user=[ssh_user]
 #Example
 graylog_1 ansible_host=10.130.0.84 ansible_user=ubuntu
 
+# Where Elasticsearch is installed
 [elastic]
 #elastic_1 ansible_host=[ip_address] ansible_user=[ssh_user]
 #Example

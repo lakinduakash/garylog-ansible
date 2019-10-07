@@ -1,2 +1,3 @@
 elastic_home: /mnt/elasticsearch-6.8.2
+# Elastic search runs as this user
 elastic_user: ubuntu
