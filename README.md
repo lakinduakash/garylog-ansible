@@ -6,7 +6,7 @@ This ansible module automates the deployment of graylog server with elasticsearc
 
 ![architecture](docs/arc.jpg)
 
-### Configuring ansible inventory
+### Configure ansible inventory
 
 `inventory` file is located in `dev/` directory. You need to insert correct hostnames,usernames.
 
