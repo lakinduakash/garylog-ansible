@@ -4,7 +4,7 @@ graylog_user: ubuntu
 
 http_bind_address: "0.0.0.0:9000"
 # Replace with public ip if you access from internet
-http_publish_uri: "http://10.130.0.84:9000/"
+http_publish_uri: "http://52.70.18.150:9000/"
 
 api_url: "http://10.130.0.84:9000/api"
 
